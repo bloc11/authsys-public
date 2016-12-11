@@ -1,0 +1,29 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/static/app.css"/>
+    <script src="/static/signature_pad.min.js"></script>
+    <script src="/static/jquery-3.1.1.min.js"></script>
+    <script src="/static/app.js"></script>
+</head>
+<body>
+  <div id="main">
+      <h1>DISCLAIMER AGREEMENT</h1>
+      <form target="/submit" method="post">
+        <p>Full name: <input name="fullname" type="text"/></p>
+        <p>ID number/passport number: <input name="id_no" type="text"/></p>
+        <div id="signature-pad" class="m-signature-pad">
+          <div class="m-signature-pad--body">
+          <canvas></canvas>
+        </div>
+        <div class="m-signature-pad--footer">
+          <div class="description">Sign above</div>
+            <button type="button" class="button clear" data-action="clear">Clear</button>
+          </div>
+        </div>
+        <p>Email: <input name="email" tyype="text"/></p>
+        <p>Send me spam: <input type="checkbox" name="spam"/></p>
+        <input id="submit-button" type="submit" value="Submit"/>
+      </form>
+  </div>
+</body>
+</html>
