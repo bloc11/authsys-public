@@ -1,9 +1,10 @@
+var signaturePad;
+
 $(document).ready(function () {
     var wrapper = document.getElementById("signature-pad"),
         clearButton = wrapper.querySelector("[data-action=clear]"),
         saveButton = wrapper.querySelector("[data-action=save]"),
-        canvas = wrapper.querySelector("canvas"),
-        signaturePad;
+        canvas = wrapper.querySelector("canvas");
 
     // Adjust canvas coordinate space taking into account pixel ratio,
     // to make it look crisp on mobile devices.
@@ -28,3 +29,36 @@ $(document).ready(function () {
     });
 
 });
+
+function save_signature()
+{
+    $("#error").html("");
+    var inputs = $("form").find("input");
+    if (!inputs[0].value) {
+        $("#error").html("please provide your full name");
+        return false;
+    }
+    if (!inputs[1].value) {
+        $("#error").html("please provide ID number");
+        return false;
+    }
+    if (!inputs[2].value) {
+        $("#error").html("please provide email address");
+        return false;
+    }
+    if (inputs[2].value.indexOf("@") == -1) {
+        $("#error").html("email address must be valid");
+        return false;
+    }
+    if (signaturePad.isEmpty()) {
+        $("#error").html("signature cannot be empty");
+        return false;
+    }
+    $("#progress").html("Uploading signature...");
+    $.post("/upload_signature", signaturePad.toDataURL(), function(res) {
+        inputs[4].value = res;
+        inputs[5].onclick = undefined;
+        $(inputs[5]).click();
+    })
+    return false;
+}

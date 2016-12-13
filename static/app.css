@@ -3,6 +3,10 @@
     text-align: center;
 }
 
+#error {
+    color: red;
+}
+
 #submit-button {
     position: absolute;
     font-size: 30px;

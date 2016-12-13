@@ -8,8 +8,8 @@
 <body>
   <div id="main">
       <h1>DISCLAIMER AGREEMENT</h1>
-      <form target="/submit" method="post">
-        <p>Full name: <input name="fullname" type="text"/></p>
+      <form action="/submit" method="post">
+        <p>Full name: <input id="fullname" name="fullname" type="text"/></p>
         <p>ID number/passport number: <input name="id_no" type="text"/></p>
         <div id="signature-pad" class="m-signature-pad">
           <div class="m-signature-pad--body">
@@ -22,7 +22,10 @@
         </div>
         <p>Email: <input name="email" tyype="text"/></p>
         <p>Send me spam: <input type="checkbox" name="spam"/></p>
-        <input id="submit-button" type="submit" value="Submit"/>
+        <input type="hidden" name="filename"/>
+        <span id="progress"></span>
+        <span id="error"></span>
+        <input id="submit-button" onclick="return save_signature();" type="submit" value="Submit"/>
       </form>
   </div>
 </body>
