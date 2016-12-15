@@ -14,7 +14,7 @@
   </header>
   <div id="main">
     <h1>DISCLAIMER AGREEMENT</h1>
-    <div class="info center">
+    <div class="info center top-space">
       <p>
         Between Gravity One Climbing and Fitness (PTY), hereafter referred to as
       </p>
@@ -50,7 +50,7 @@
     </div>
 
     <div class="info">
-      <h2>THEREFORE IT IS AGREED UPON AS FOLLOWS:</h2>
+      <h2 class="top-space">THEREFORE IT IS AGREED UPON AS FOLLOWS:</h2>
       <h3>WAIVER</h3>
       <p>
         The Climber acknowledges that the activity in which he/she participates in by
@@ -80,15 +80,19 @@
       </p>
     </div>
     <div>
-      <h2>Participant's details</h2>
+      <h2 class="top-space">Participant's details</h2>
       <form action="/submit" method="post">
-        <div>
-          <label for="fullname">Full Name:</label>
-          <input id="fullname" name="fullname" type="text"/>
-        </div>
-        <div>
-          <label for="id_no">ID/Passport Number:</label>
-          <input name="id_no" type="text"/>
+        <div class="section">
+          <div class="input" id="fullname-input" name="fullname-input">
+            <label for="fullname">Full Name:</label>
+            <input id="fullname" name="fullname" type="text"/>
+            <div class="error">Please provide your full name.</div>
+          </div>
+          <div class="input" id="id-input" name="id-input">
+            <label for="id_no">ID/Passport Number:</label>
+            <input id="id_no" name="id_no" type="number"/>
+            <div class="error">Please provide your South African ID number or passport number.</div>
+          </div>
         </div>
 
         <h3>Electronic Signature Consent</h3>
@@ -105,40 +109,55 @@
           regarding any changes, if necessary.
         </p>
 
-        <h3>Electronic Signature</h3>
+        <h3 class="top-space-small">Electronic Signature</h3>
 
         <div id="signature-pad" class="m-signature-pad">
           <div class="m-signature-pad--body">
           <canvas></canvas>
         </div>
 
-        <div class="m-signature-pad--footer">
+        <div class="m-signature-pad--footer" id="signature-input" name="signature-input">
           <div class="description">Sign above</div>
             <button type="button" class="button clear" data-action="clear">Clear</button>
           </div>
         </div>
 
-        <h3>Electronic Signature</h3>
-        <div>
+        <div class="section top-space">
+          <h3>Email Address</h3>
           Email provided here may be used to send the basic information about safety procedures
           at bloc 11. Unless checked below it won't be used for anything else other than changes
           to terms and conditions.
-          <label for="email">Email: </label>
-          <input name="email" type="text"/>
+
+          <div class="input" id="email-input" name="email-input">
+            <label for="email">Email: </label>
+            <input id="email" name="email" type="text"/>
+            <div class="error">Please provide your email address.</div>
+          </div>
+
         </div>
 
-        <div>
-          Subscribe to low-volume, high-quality newsletter from bloc 11. We promise to not send
-          you mail more than once a month and not sell the email to any third parties nor send
-          you unwarranted marketing material. You can unsubscribe at any time.
-          <label for="spam">Subscribe to the newsletter: </label>
-          <input type="checkbox" name="spam"/>
+        <div class="section top-space-small">
+          <h3>Emergency Contact</h3>
+
+          <div class="input">
+            <label for="email">Name: </label>
+            <input id="email" name="email" type="text"/>
+            <div class="error">Please provide your emergency contact's full name.</div>
+          </div>
+
+          <div class="input">
+            <label for="email">Phone Number: </label>
+            <input name="email" type="phone"/>
+            <div class="error">Please provide your emergency contact's phone number.</div>
+          </div>
         </div>
 
-        <input type="hidden" name="filename"/>
+        <input type="hidden" id="input-filename" name="filename"/>
+
         <span id="progress"></span>
-        <span id="error"></span>
-        <input id="submit-button" onclick="return save_signature();" type="submit" value="Submit"/>
+        <div id="error"></div>
+
+        <input id="submit-button" onclick="return save_signature();" type="submit" value="Submit Waiver"/>
       </form>
     </div>
   </div>

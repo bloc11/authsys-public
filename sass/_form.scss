@@ -1,21 +1,67 @@
 form {
   display: block;
   max-width: 680px;
-  margin: 0 auto;
+  margin: 0 auto 50px;
 
-  > div {
+  input:focus {
+    outline: none;
+  }
+
+  .input {
     margin: 20px 0;
 
     label {
       margin-bottom: 10px;
       display: block;
       text-transform: uppercase;
-
+      font-weight: bold;
     }
     input {
       display: block;
       padding: 10px;
       width: 100%;
+      border: solid 1px $color-grey;
+      font-size: 18px;
+    }
+
+    &.error {
+      label {
+        color: $color-red
+      }
+      input {
+        border-color: $color-red
+      }
+
+      .error {
+        display: block;
+      }
+    }
+
+    .error {
+      color: $color-red;
+      padding: 20px 10px;
+      font-weight: bold;
+      margin-top: 10px;
+      background-color: rgba($color-red, 0.2);
+      display: none;
+    }
+  }
+
+  .input-check {
+    padding: 10px 15px;
+    font-weight: bold;
+    background-color: rgba($color-orange, 0.8);
+    height: 24px;
+    color: white;
+    cursor: pointer;
+
+    input {
+      margin-right: 10px;
+    }
+
+    label {
+      position: relative;
+      top: 2px;
     }
   }
 }
@@ -25,13 +71,72 @@ form {
 }
 
 #error {
-    color: red;
+  color: $color-red;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  background-color: rgba($color-red, 0.2);
+  display: none;
+
+  &.show {
+    display: block;
+  }
+
+  a {
+    color: $color-red;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: darken($color-red, 10%);
+    }
+  }
 }
 
 #submit-button {
-    position: absolute;
-    font-size: 30px;
-    font-weight: bold;
-    //top: 500px;
-    //left: 500px;
+  background: $color-orange;
+  font-size: 20px;
+  border: none;
+  padding: 20px;
+  width: 100%;
+  text-transform: uppercase;
+  color: white;
+}
+
+.iagree {
+  padding: 10px;
+  background: $color-orange;
+  margin: 10px 0;
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+
+  &.accepted {
+    background: #eee;
+    color: $color-grey;
+  }
+
+  &.error {
+    background: $color-red;
+  }
+
+  input {
+    position: relative;
+    top: -3px;
+    margin-right: 10px;
+  }
+}
+
+button {
+  display: block;
+  border: none;
+  background-color: $color-orange;
+  color: white;
+  padding: 20px;
+  cursor: pointer;
+}
+
+#submit-button {
+  cursor: pointer;
 }
