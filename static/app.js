@@ -28,6 +28,20 @@ $(document).ready(function () {
         signaturePad.clear();
     });
 
+    $('.iagree').on('click', function(e){
+      var ia = $(e.target).closest('.iagree')
+      if (ia.hasClass('accepted')) {
+        ia.removeClass('accepted').find('input').prop('checked',false)
+      } else {
+        ia.addClass('accepted').removeClass('error').find('input').prop('checked',true)
+      }
+    })
+
+    $('.spam').on('click', function(e){
+        var ia = $(e.target).closest('.spam').find('input')
+        ia.prop('checked', !ia.prop('checked'))
+    })
+
 });
 
 function save_signature()

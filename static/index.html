@@ -14,7 +14,7 @@
   </header>
   <div id="main">
     <h1>DISCLAIMER AGREEMENT</h1>
-    <div class="info center">
+    <div class="info center top-space">
       <p>
         Between <- official company name ->, hereafter referred to as
       </p>
@@ -59,7 +59,7 @@
     </div>
 
     <div class="info">
-      <h2>THEREFORE IT IS AGREED UPON AS FOLLOWS:</h2>
+      <h2 class="top-space">THEREFORE IT IS AGREED UPON AS FOLLOWS:</h2>
       <h3>WAIVER</h3>
       <p>
         The Climber/Observer acknowledges that the activity in which he/she participates in by
@@ -89,16 +89,18 @@
       </div>
     </div>
     <div>
-      <h2>Participant's details</h2>
+      <h2 class="top-space">Participant's details</h2>
       <form action="/submit" method="post">
         <div class="section">
           <div class="input">
             <label for="fullname">Full Name:</label>
             <input id="fullname" name="fullname" type="text"/>
+            <div class="error">Please provide your full name.</div>
           </div>
-          <div class="input error">
+          <div class="input">
             <label for="id_no">ID/Passport Number:</label>
             <input name="id_no" type="number"/>
+            <div class="error">Please provide your South African ID number or passport number.</div>
           </div>
         </div>
 
@@ -120,7 +122,7 @@
           <input type="checkbox"/> I agree
         </div>
 
-        <h3>Electronic Signature</h3>
+        <h3 class="top-space-small">Electronic Signature</h3>
 
         <div id="signature-pad" class="m-signature-pad">
           <div class="m-signature-pad--body">
@@ -133,31 +135,34 @@
           </div>
         </div>
 
-        <div class="section">
+        <div class="section top-space">
           <h3>Email Address</h3>
 
           <div class="input">
             <label for="email">Email: </label>
             <input name="email" type="text"/>
+            <div class="error">Please provide your email address.</div>
           </div>
 
-          <div class="input-check">
+          <div class="input-check spam">
             <input type="checkbox" name="spam"/>
             <label for="spam">Send me spam</label>
           </div>
         </div>
 
-        <div class="section">
+        <div class="section top-space-small">
           <h3>Emergency Contact</h3>
 
           <div class="input">
             <label for="email">Name: </label>
             <input name="email" type="text"/>
+            <div class="error">Please provide your emergency contact's full name.</div>
           </div>
 
           <div class="input">
             <label for="email">Phone Number: </label>
             <input name="email" type="phone"/>
+            <div class="error">Please provide your emergency contact's phone number.</div>
           </div>
         </div>
 

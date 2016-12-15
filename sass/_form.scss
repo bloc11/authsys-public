@@ -31,15 +31,29 @@ form {
       input {
         border-color: $color-red
       }
+
+      .error {
+        display: block;
+      }
+    }
+
+    .error {
+      color: $color-red;
+      padding: 20px 10px;
+      font-weight: bold;
+      margin-top: 10px;
+      background-color: rgba($color-red, 0.2);
+      display: none;
     }
   }
 
   .input-check {
     padding: 10px 15px;
-    text-transform: uppercase;
     font-weight: bold;
-    background-color: rgba($color-orange, 0.2);
+    background-color: rgba($color-orange, 0.8);
     height: 24px;
+    color: white;
+    cursor: pointer;
 
     input {
       margin-right: 10px;
@@ -77,6 +91,16 @@ form {
   font-weight: bold;
   font-size: 20px;
   color: white;
+  cursor: pointer;
+
+  &.accepted {
+    background: #eee;
+    color: $color-grey;
+  }
+
+  &.error {
+    background: $color-red;
+  }
 
   input {
     position: relative;

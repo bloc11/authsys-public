@@ -4,9 +4,14 @@ body {
   margin: 0;
 }
 
+header.main {
+  margin: 100px 0;
+}
+
 #main {
   max-width: 680px;
   margin: 0 auto;
+  padding-bottom: 50px;
 
   h1 {
     text-align: center;
@@ -37,4 +42,12 @@ h3 {
   padding-top: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid #ccc;
+}
+
+.top-space {
+  padding-top: 40px;
+}
+
+.top-space-small {
+  padding-top: 20px;
 }

@@ -111,9 +111,13 @@ body {
   padding: 0;
   margin: 0; }
 
+header.main {
+  margin: 100px 0; }
+
 #main {
   max-width: 680px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding-bottom: 50px; }
   #main h1 {
     text-align: center; }
 
@@ -136,6 +140,12 @@ h3 {
   padding-top: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid #ccc; }
+
+.top-space {
+  padding-top: 40px; }
+
+.top-space-small {
+  padding-top: 20px; }
 
 form {
   display: block;
@@ -160,12 +170,22 @@ form {
       color: #E84624; }
     form .input.error input {
       border-color: #E84624; }
+    form .input.error .error {
+      display: block; }
+    form .input .error {
+      color: #E84624;
+      padding: 20px 10px;
+      font-weight: bold;
+      margin-top: 10px;
+      background-color: rgba(232, 70, 36, 0.2);
+      display: none; }
   form .input-check {
     padding: 10px 15px;
-    text-transform: uppercase;
     font-weight: bold;
-    background-color: rgba(242, 101, 34, 0.2);
-    height: 24px; }
+    background-color: rgba(242, 101, 34, 0.8);
+    height: 24px;
+    color: white;
+    cursor: pointer; }
     form .input-check input {
       margin-right: 10px; }
     form .input-check label {
@@ -193,7 +213,13 @@ form {
   margin: 10px 0;
   font-weight: bold;
   font-size: 20px;
-  color: white; }
+  color: white;
+  cursor: pointer; }
+  .iagree.accepted {
+    background: #eee;
+    color: #6d6b71; }
+  .iagree.error {
+    background: #E84624; }
   .iagree input {
     position: relative;
     top: -3px;
