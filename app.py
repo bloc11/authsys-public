@@ -54,7 +54,7 @@ def submit():
         'signature_filename': request.form['filename'],
         'timestamp': int(time.time()),
     }))
-    thread.start_new_thread(send_email, ())
+    thread.start_new_thread(send_email, (request.form['email'],))
     return app.send_static_file('thankyou.html')
 
 @app.route('/')

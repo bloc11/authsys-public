@@ -83,7 +83,7 @@ canvas {
     width: auto;
     height: auto;
     min-width: 250px;
-    min-height: 140px;
+    min-height: 300px;
     margin: 5%; }
   #github {
     display: none; } }
