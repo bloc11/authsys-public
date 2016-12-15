@@ -2,18 +2,30 @@
 """
 """
 
-import time, os, base64
+import time, os, base64, thread
 
 from sqlalchemy import create_engine, select, func
 
 from authsys_common.model import members
-from authsys_common.scripts import get_db_url, get_config
+from authsys_common.scripts import get_db_url, get_config, get_email_conf
 
 eng = create_engine(get_db_url())
 con = eng.connect()
 
 from flask import Flask, request
 app = Flask(__name__, static_url_path='/static')
+
+def send_email(target):
+    import smtplib
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.starttls()
+    server.login(*get_email_conf())
+    msg = """Subject: Welcome to bloc 11
+From: bloc.eleven@gmail.com
+
+%s
+""" % open(os.path.join(os.path.dirname(__file__), 'letter.txt')).read()
+    server.sendmail("bloc.eleven@gmail.com", target, msg)
 
 @app.route("/upload_signature", methods=["POST"])
 def upload_sign():
@@ -42,6 +54,7 @@ def submit():
         'signature_filename': request.form['filename'],
         'timestamp': int(time.time()),
     }))
+    thread.start_new_thread(send_email, ())
     return app.send_static_file('thankyou.html')
 
 @app.route('/')
