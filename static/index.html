@@ -53,7 +53,7 @@
       <p>
         The ability of the Climber/Observer to climb in Bloc11 gives no indication of his/her ability to climb on natural rock in the outdoor environment.
       </p>
-      <div>
+      <div class="iagree">
         <input type="checkbox"> I agree
       </div>
     </div>
@@ -84,20 +84,22 @@
         provide a medical certificate. Bloc11, its members or employees, shall not be liable for any claim or
         injury or loss, damage or even death arising from or in connection with the use of the facility.
       </p>
-      <div>
+      <div class="iagree">
         <input type="checkbox"> I agree
       </div>
     </div>
     <div>
       <h2>Participant's details</h2>
       <form action="/submit" method="post">
-        <div>
-          <label for="fullname">Full Name:</label>
-          <input id="fullname" name="fullname" type="text"/>
-        </div>
-        <div>
-          <label for="id_no">ID/Passport Number:</label>
-          <input name="id_no" type="text"/>
+        <div class="section">
+          <div class="input">
+            <label for="fullname">Full Name:</label>
+            <input id="fullname" name="fullname" type="text"/>
+          </div>
+          <div class="input error">
+            <label for="id_no">ID/Passport Number:</label>
+            <input name="id_no" type="number"/>
+          </div>
         </div>
 
         <h3>Electronic Signature Consent</h3>
@@ -114,9 +116,9 @@
           regarding any changes, if necessary.
         </p>
 
-        <p>
+        <div class="iagree">
           <input type="checkbox"/> I agree
-        </p>
+        </div>
 
         <h3>Electronic Signature</h3>
 
@@ -131,21 +133,40 @@
           </div>
         </div>
 
-        <h3>Electronic Signature</h3>
-        <div>
-          <label for="email">Email: </label>
-          <input name="email" tyype="text"/>
+        <div class="section">
+          <h3>Email Address</h3>
+
+          <div class="input">
+            <label for="email">Email: </label>
+            <input name="email" type="text"/>
+          </div>
+
+          <div class="input-check">
+            <input type="checkbox" name="spam"/>
+            <label for="spam">Send me spam</label>
+          </div>
         </div>
 
-        <div>
-          <label for="spam">Send me spam: </label>
-          <input type="checkbox" name="spam"/>
+        <div class="section">
+          <h3>Emergency Contact</h3>
+
+          <div class="input">
+            <label for="email">Name: </label>
+            <input name="email" type="text"/>
+          </div>
+
+          <div class="input">
+            <label for="email">Phone Number: </label>
+            <input name="email" type="phone"/>
+          </div>
         </div>
 
         <input type="hidden" name="filename"/>
+
         <span id="progress"></span>
         <span id="error"></span>
-        <input id="submit-button" onclick="return save_signature();" type="submit" value="Submit"/>
+
+        <input id="submit-button" onclick="return save_signature();" type="submit" value="Submit Waiver"/>
       </form>
     </div>
   </div>

@@ -9,8 +9,8 @@ from sqlalchemy import create_engine, select, func
 from authsys_common.model import members
 from authsys_common.scripts import get_db_url, get_config
 
-eng = create_engine(get_db_url())
-con = eng.connect()
+# eng = create_engine(get_db_url())
+# con = eng.connect()
 
 from flask import Flask, request
 app = Flask(__name__, static_url_path='/static')
@@ -21,7 +21,8 @@ def upload_sign():
     d = request.form.keys()[0]
     prefix = "data:image/png;base64,"
     assert d.startswith(prefix)
-    store_dir = get_config().get('data', 'store_dir')
+    # store_dir = get_config().get('data', 'store_dir')
+    store_dir = 'tmp'
     # invent new filename
     no = list(con.execute(select([func.count(members)])))[0][0]
     fname = os.path.join(store_dir, "signature_%d.png" % int(no))

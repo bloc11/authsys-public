@@ -1,15 +1,8 @@
 .m-signature-pad {
-  //display: none;
-
-  //position: absolute;
   position: relative;
   font-size: 10px;
   width: 100%;
   height: 400px;
-  //top: 50%;
-  //left: 50%;
-  //margin-left: -200px;
-  //margin-top: -100px;
   border: 1px solid #e8e8e8;
   background-color: #fff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.08) inset;
@@ -48,7 +41,7 @@
   left: 20px;
   right: 20px;
   top: 20px;
-  bottom: 60px;
+  bottom: 88px;
   border: 1px solid #f4f4f4;
 }
 
@@ -73,10 +66,9 @@
 
 .m-signature-pad--footer
   .description {
-    color: #C3C3C3;
+    color: $color-grey;
     text-align: center;
-    font-size: 1.2em;
-    margin-top: 1.8em;
+    font-size: 2em;
   }
 
 .m-signature-pad--footer
@@ -87,7 +79,7 @@
 
 .m-signature-pad--footer
   .button.clear {
-    left: 50;
+    //left: 50;
   }
 
 .m-signature-pad--footer
@@ -134,6 +126,5 @@
   .m-signature-pad--footer
     .description {
       font-size: 1em;
-      margin-top: 1em;
     }
 }

@@ -38,7 +38,7 @@
   left: 20px;
   right: 20px;
   top: 20px;
-  bottom: 60px;
+  bottom: 88px;
   border: 1px solid #f4f4f4; }
 
 .m-signature-pad--body
@@ -60,19 +60,14 @@ canvas {
 
 .m-signature-pad--footer
 .description {
-  color: #C3C3C3;
+  color: #6d6b71;
   text-align: center;
-  font-size: 1.2em;
-  margin-top: 1.8em; }
+  font-size: 2em; }
 
 .m-signature-pad--footer
 .button {
   position: absolute;
   bottom: 0; }
-
-.m-signature-pad--footer
-.button.clear {
-  left: 50; }
 
 .m-signature-pad--footer
 .button.save {
@@ -109,8 +104,7 @@ canvas {
     height: 28px; }
   .m-signature-pad--footer
 .description {
-    font-size: 1em;
-    margin-top: 1em; } }
+    font-size: 1em; } }
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -128,31 +122,89 @@ body {
   .brand .icon-logo {
     font-size: 10rem; }
 
+.section {
+  padding: 10px 0 20px; }
+
+h2 {
+  margin-top: 30px;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #ccc; }
+
+h3 {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc; }
+
 form {
   display: block;
   max-width: 680px;
-  margin: 0 auto; }
-  form > div {
+  margin: 0 auto 50px; }
+  form input:focus {
+    outline: none; }
+  form .input {
     margin: 20px 0; }
-    form > div label {
+    form .input label {
       margin-bottom: 10px;
       display: block;
-      text-transform: uppercase; }
-    form > div input {
+      text-transform: uppercase;
+      font-weight: bold; }
+    form .input input {
       display: block;
       padding: 10px;
-      width: 100%; }
+      width: 100%;
+      border: solid 1px #6d6b71;
+      font-size: 18px; }
+    form .input.error label {
+      color: #E84624; }
+    form .input.error input {
+      border-color: #E84624; }
+  form .input-check {
+    padding: 10px 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: rgba(242, 101, 34, 0.2);
+    height: 24px; }
+    form .input-check input {
+      margin-right: 10px; }
+    form .input-check label {
+      position: relative;
+      top: 2px; }
 
 .center {
   text-align: center; }
 
 #error {
-  color: red; }
+  color: #E84624; }
 
 #submit-button {
-  position: absolute;
-  font-size: 30px;
-  font-weight: bold; }
+  background: #F26522;
+  font-size: 20px;
+  border: none;
+  padding: 20px;
+  width: 100%;
+  text-transform: uppercase;
+  color: white; }
+
+.iagree {
+  padding: 10px;
+  background: #F26522;
+  margin: 10px 0;
+  font-weight: bold;
+  font-size: 20px;
+  color: white; }
+  .iagree input {
+    position: relative;
+    top: -3px;
+    margin-right: 10px; }
+
+button {
+  display: block;
+  border: none;
+  background-color: #F26522;
+  color: white;
+  padding: 20px; }
 
 @font-face {
   font-family: 'icons';
