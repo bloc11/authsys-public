@@ -92,14 +92,14 @@
       <h2 class="top-space">Participant's details</h2>
       <form action="/submit" method="post">
         <div class="section">
-          <div class="input">
+          <div class="input" id="fullname-input" name="fullname-input">
             <label for="fullname">Full Name:</label>
             <input id="fullname" name="fullname" type="text"/>
             <div class="error">Please provide your full name.</div>
           </div>
-          <div class="input">
+          <div class="input" id="id-input" name="id-input">
             <label for="id_no">ID/Passport Number:</label>
-            <input name="id_no" type="number"/>
+            <input id="id_no" name="id_no" type="number"/>
             <div class="error">Please provide your South African ID number or passport number.</div>
           </div>
         </div>
@@ -129,7 +129,7 @@
           <canvas></canvas>
         </div>
 
-        <div class="m-signature-pad--footer">
+        <div class="m-signature-pad--footer" id="signature-input" name="signature-input">
           <div class="description">Sign above</div>
             <button type="button" class="button clear" data-action="clear">Clear</button>
           </div>
@@ -138,9 +138,9 @@
         <div class="section top-space">
           <h3>Email Address</h3>
 
-          <div class="input">
+          <div class="input" id="email-input" name="email-input">
             <label for="email">Email: </label>
-            <input name="email" type="text"/>
+            <input id="email" name="email" type="text"/>
             <div class="error">Please provide your email address.</div>
           </div>
 
@@ -155,7 +155,7 @@
 
           <div class="input">
             <label for="email">Name: </label>
-            <input name="email" type="text"/>
+            <input id="email" name="email" type="text"/>
             <div class="error">Please provide your emergency contact's full name.</div>
           </div>
 
@@ -169,7 +169,7 @@
         <input type="hidden" name="filename"/>
 
         <span id="progress"></span>
-        <span id="error"></span>
+        <div id="error"></div>
 
         <input id="submit-button" onclick="return save_signature();" type="submit" value="Submit Waiver"/>
       </form>
