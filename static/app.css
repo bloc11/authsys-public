@@ -1,20 +1,5 @@
-
-#main {
-    text-align: center;
-}
-
-#error {
-    color: red;
-}
-
-#submit-button {
-    position: absolute;
-    font-size: 30px;
-    top: 500px;
-    left: 500px;
-}
-
 .m-signature-pad {
+  display: none;
   position: absolute;
   font-size: 10px;
   width: 400px;
@@ -26,35 +11,32 @@
   border: 1px solid #e8e8e8;
   background-color: #fff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.08) inset;
-  border-radius: 4px;
-}
+  border-radius: 4px; }
 
 .m-signature-pad:before, .m-signature-pad:after {
-    position: absolute;
+  position: absolute;
   z-index: -1;
   content: "";
-    width: 40%;
-    height: 10px;
-    left: 20px;
-    bottom: 10px;
-    background: transparent;
-    -webkit-transform: skew(-3deg) rotate(-3deg);
-    -moz-transform: skew(-3deg) rotate(-3deg);
-    -ms-transform: skew(-3deg) rotate(-3deg);
-    -o-transform: skew(-3deg) rotate(-3deg);
-    transform: skew(-3deg) rotate(-3deg);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
-}
+  width: 40%;
+  height: 10px;
+  left: 20px;
+  bottom: 10px;
+  background: transparent;
+  -webkit-transform: skew(-3deg) rotate(-3deg);
+  -moz-transform: skew(-3deg) rotate(-3deg);
+  -ms-transform: skew(-3deg) rotate(-3deg);
+  -o-transform: skew(-3deg) rotate(-3deg);
+  transform: skew(-3deg) rotate(-3deg);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4); }
 
 .m-signature-pad:after {
-    left: auto;
-    right: 20px;
-    -webkit-transform: skew(3deg) rotate(3deg);
-    -moz-transform: skew(3deg) rotate(3deg);
-    -ms-transform: skew(3deg) rotate(3deg);
-    -o-transform: skew(3deg) rotate(3deg);
-    transform: skew(3deg) rotate(3deg);
-}
+  left: auto;
+  right: 20px;
+  -webkit-transform: skew(3deg) rotate(3deg);
+  -moz-transform: skew(3deg) rotate(3deg);
+  -ms-transform: skew(3deg) rotate(3deg);
+  -o-transform: skew(3deg) rotate(3deg);
+  transform: skew(3deg) rotate(3deg); }
 
 .m-signature-pad--body {
   position: absolute;
@@ -62,51 +44,44 @@
   right: 20px;
   top: 20px;
   bottom: 60px;
-  border: 1px solid #f4f4f4;
-}
+  border: 1px solid #f4f4f4; }
 
 .m-signature-pad--body
-  canvas {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 4px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.02) inset;
-  }
+canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.02) inset; }
 
 .m-signature-pad--footer {
   position: absolute;
   left: 20px;
   right: 20px;
   bottom: 20px;
-  height: 40px;
-}
+  height: 40px; }
 
 .m-signature-pad--footer
-  .description {
-    color: #C3C3C3;
-    text-align: center;
-    font-size: 1.2em;
-    margin-top: 1.8em;
-  }
+.description {
+  color: #C3C3C3;
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 1.8em; }
 
 .m-signature-pad--footer
-  .button {
-    position: absolute;
-    bottom: 0;
-  }
+.button {
+  position: absolute;
+  bottom: 0; }
 
 .m-signature-pad--footer
-  .button.clear {
-    left: 50;
-  }
+.button.clear {
+  left: 50; }
 
 .m-signature-pad--footer
-  .button.save {
-    right: 0;
-  }
+.button.save {
+  right: 0; }
 
 @media screen and (max-width: 1024px) {
   .m-signature-pad {
@@ -118,35 +93,136 @@
     height: auto;
     min-width: 250px;
     min-height: 140px;
-    margin: 5%;
-  }
+    margin: 5%; }
   #github {
-    display: none;
-  }
-}
+    display: none; } }
 
 @media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   .m-signature-pad {
-    margin: 10%;
-  }
-}
+    margin: 10%; } }
 
 @media screen and (max-height: 320px) {
   .m-signature-pad--body {
     left: 0;
     right: 0;
     top: 0;
-    bottom: 32px;
-  }
+    bottom: 32px; }
   .m-signature-pad--footer {
     left: 20px;
     right: 20px;
     bottom: 4px;
-    height: 28px;
-  }
+    height: 28px; }
   .m-signature-pad--footer
-    .description {
-      font-size: 1em;
-      margin-top: 1em;
-    }
-}
+.description {
+    font-size: 1em;
+    margin-top: 1em; } }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0; }
+
+#main {
+  max-width: 680px;
+  margin: 0 auto; }
+  #main h1 {
+    text-align: center; }
+
+.brand {
+  text-align: center; }
+  .brand .icon-logo {
+    font-size: 10rem; }
+
+form {
+  display: block;
+  max-width: 680px;
+  margin: 0 auto; }
+  form > div {
+    margin: 20px 0; }
+    form > div label {
+      margin-bottom: 10px;
+      display: block;
+      text-transform: uppercase; }
+    form > div input {
+      display: block;
+      padding: 10px;
+      width: 100%; }
+
+.center {
+  text-align: center; }
+
+#error {
+  color: red; }
+
+#submit-button {
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold; }
+
+@font-face {
+  font-family: 'icons';
+  src: url("/static/fonts/icons/icons.eot?24kygq");
+  src: url("/static/fonts/icons/icons.eot?24kygq#iefix") format("embedded-opentype"), url("/static/fonts/icons/icons.ttf?24kygq") format("truetype"), url("/static/fonts/icons/icons.woff?24kygq") format("woff"), url("/static/fonts/icons/icons.svg?24kygq#icons") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-triangle:before {
+  content: "\e900"; }
+
+.icon-facebook:before {
+  content: "\e901"; }
+
+.icon-twitter:before {
+  content: "\e902"; }
+
+.icon-logo:before {
+  content: "\e903"; }
+
+.icon-lines:before {
+  content: "\e904"; }
+
+.icon-instagram:before {
+  content: "\e905"; }
+
+.icon-coffee:before {
+  content: "\e906"; }
+
+.icon-yoga:before {
+  content: "\e907"; }
+
+.icon-physio:before {
+  content: "\e908"; }
+
+.icon-mountain:before {
+  content: "\e909"; }
+
+.icon-left:before {
+  content: "\e90a"; }
+
+.icon-up:before {
+  content: "\e90b"; }
+
+.icon-right:before {
+  content: "\e90c"; }
+
+.icon-down:before {
+  content: "\e90d"; }
+
+.icon-menu:before {
+  content: "\e90e"; }
+
+.icon-youtube:before {
+  content: "\e90f"; }

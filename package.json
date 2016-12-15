@@ -1,0 +1,16 @@
+{
+  "name": "bloc11",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-sass": "node_modules/node-sass/bin/node-sass --include-path sass sass/app.scss static/app.css",
+    "watch-sass": "nodemon -e scss -x \"npm run build-sass\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^3.10.1"
+  }
+}

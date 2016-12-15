@@ -1,0 +1,22 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+#main {
+  max-width: 680px;
+  margin: 0 auto;
+
+  h1 {
+    text-align: center;
+  }
+}
+
+.brand {
+  text-align: center;
+
+  .icon-logo {
+    font-size: 10rem;
+  }
+}
