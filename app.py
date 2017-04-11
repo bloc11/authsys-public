@@ -2,7 +2,7 @@
 """
 """
 
-import time, os, base64, thread
+import time, os, base64, thread, urllib2, urllib, json
 
 from sqlalchemy import create_engine, select, func
 
@@ -12,8 +12,48 @@ from authsys_common.scripts import get_db_url, get_config, get_email_conf
 eng = create_engine(get_db_url())
 con = eng.connect()
 
-from flask import Flask, request
+from flask import Flask, request, jsonify, render_template
 app = Flask(__name__, static_url_path='/static')
+
+def payment_gateway_request():
+    conf = get_config()
+    url = "https://test.oppwa.com/v1/checkouts"
+    data = {
+        'authentication.userId' : conf.get('payment', 'userId'),
+        'authentication.password' : conf.get('payment', 'password'),
+        'authentication.entityId' : conf.get('payment', 'entityId'),
+        'amount' : '92.00',
+        'currency' : 'ZAR',
+        'paymentType' : 'DB',
+        'recurringType': 'INITIAL',
+        'createRegistration': 'true',
+        }
+    try:
+        opener = urllib2.build_opener(urllib2.HTTPHandler)
+        request = urllib2.Request(url, data=urllib.urlencode(data))
+        request.get_method = lambda: 'POST'
+        response = opener.open(request)
+        return json.loads(response.read())
+    except urllib2.HTTPError, e:
+        return {'error': e.code}
+
+def check_payment_status(path):
+    conf = get_config()
+    url = "https://test.oppwa.com/" + path
+    params = "&".join(["%s=%s" for (k, v) in [
+        ('authentication.userId', conf.get('payment', 'userId')),
+        ('authentication.password', conf.get('payment', 'password')),
+        ('authentication.entityId', conf.get('payment', 'entityId')),
+    ]])
+    try:
+        opener = urllib2.build_opener(urllib2.HTTPHandler)
+        request = urllib2.Request(url + "?" + params, data='')
+        request.get_method = lambda: 'GET'
+        response = opener.open(request)
+        return json.loads(response.read())
+    except urllib2.HTTPError, e:
+        return {'error': e.code}
+
 
 def send_email(target):
     import smtplib
@@ -43,6 +83,23 @@ def upload_sign():
     with open(fname, "w") as f:
         f.write(base64.b64decode(d, " /"))
     return fname
+
+@app.route('/subscribe', methods=['GET'])
+def subscribe():
+    d = payment_gateway_request()
+    if d.get('error') is not None:
+        xxx # render error
+    return render_template('subscribe.html', payment_id=d['id'])
+
+@app.route('/subscribe_prep')
+def subcribe_prep():
+    return jsonify(payment_gateway_request())
+
+@app.route('/finish')
+def finish():
+    status = check_payment_status(request.args['resourcePath'])
+    res_code = status['result']['code']
+    return render_template('finish.html', output=str(status))
 
 @app.route('/submit', methods=["POST"])
 def submit():
