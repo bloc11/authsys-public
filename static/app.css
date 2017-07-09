@@ -321,3 +321,9 @@ button {
 
 .icon-youtube:before {
   content: "\e90f"; }
+
+select {
+    font-size: 1.17em;
+    width: 500px;
+}
+

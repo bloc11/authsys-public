@@ -106,9 +106,12 @@ def submit():
     con.execute(members.insert().values({
         'name': request.form['fullname'],
         'email': request.form['email'],
+        'phone': request.form['phone'],
+        'emergency_phone': request.form['emergency-phone'],
         'spam_consent': request.form.get('spam', 'off') == u'on',
         'id_number': request.form['id_no'],
         'signature_filename': request.form['filename'],
+        'show_up_reason': request.form['reason'],
         'timestamp': int(time.time()),
     }))
     thread.start_new_thread(send_email, (request.form['email'],))

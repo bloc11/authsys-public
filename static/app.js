@@ -82,6 +82,14 @@ $(document).ready(function () {
       $('#fullname-input').removeClass('error');
       $("#error").removeClass('show');
     });
+    $('#phone').on('keydown', function(){
+      $('#phone-input').removeClass('error');
+      $("#error").removeClass('show');
+    });
+    $("#emergency-phone").on('keydown', function(){
+      $('#emergency-phone-input').removeClass('error');
+      $("#error").removeClass('show');
+    });
     $('#id_no').on('keydown', function(){
       $('#id-input').removeClass('error');
       $("#error").removeClass('show');
@@ -121,6 +129,15 @@ function save_signature()
         errors.push("<a href='#email-input'><i class='icon-up'></i> Email address must be valid.</a>");
         $("#email-input").addClass('error');
     }
+    if (!$('#phone').val()) {
+        errors.push("<a href='#phone-input'><i class='icon-up'></i> Please provide phone number</a>");
+        $("#phone-input").addClass('error');
+    }
+    if (!$('#emergency-phone').val()) {
+        errors.push("<a href='#emergency-phone-input'><i class='icon-up'></i> Please provide emergency phone number</a>");
+        $("#emergency-phone-input").addClass('error');
+    }
+    
     if (signaturePad.isEmpty()) {
         errors.push("<a href='#signature-input'><i class='icon-up'></i> Signature cannot be empty.</a>");
         $("#error").addClass('show');

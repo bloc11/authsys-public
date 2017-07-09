@@ -92,7 +92,7 @@
           <div class="input" id="id-input" name="id-input">
             <label for="id_no">ID/Passport Number:</label>
             <input id="id_no" name="id_no"/>
-            <div class="error">Please provide your South African ID number or passport number.</div>
+            <div class="error">Please provide your South African ID number or passport number (or date of birth in case you don't know).</div>
           </div>
         </div>
 
@@ -124,31 +124,48 @@
         </div>
 
         <div class="section top-space">
-          <h3>Email Address</h3>
-          Email provided here may be used to send the basic information about safety procedures
-          at bloc 11. Unless checked below it won't be used for anything else other than changes
-          to terms and conditions.
+          <h3>Contact details</h3>
+          Email provided here will be used to send the basic information about safety procedures
+          at bloc 11 and in case of future problems of credit card processing.
+          Unless checked below it won't be used for anything else other than changes
+          to terms and conditions. We'll only ever call you or send you sms in a case of emergency
+          or problems with your credit card processing.
 
           <div class="input" id="email-input" name="email-input">
             <label for="email">Email: </label>
             <input id="email" name="email" type="text"/>
             <div class="error">Please provide your email address.</div>
           </div>
+          <div class="input" id="email-consent">
+            <label for="consent">Please send me occasional newsletter</label>
+            <input name="spam" type="checkbox"/>
+          </div>
+          <div class="input" id="phone-input" name="phone-input">
+            <label for="phone">Phone: </label>
+            <input id="phone" name="phone" type="text"/>
+            <div class="error">Please provide your telephone number</div>
+          </div>
 
+        </div>
+        <div class="section top-space-small">
+        <h3>In order to improve our understanding of our dear customers, please
+        select where did you hear about us (optional)</h3>
+        <select name="reason">
+          <option value="friends">Friends</option>
+          <option value="social-media">Social media</option>
+          <option value="fliers">Fliers</option>
+          <option value="internet-search">Internet search</option>
+          <option value="drive-by">Just drove by</option>
+          <option value="other">Other</option>
+        </select>
         </div>
 
         <div class="section top-space-small">
           <h3>Emergency Contact</h3>
 
-          <div class="input">
-            <label for="email">Name: </label>
-            <input id="email" name="email" type="text"/>
-            <div class="error">Please provide your emergency contact's full name.</div>
-          </div>
-
-          <div class="input">
+          <div class="input" id="emergency-phone-input" name="emergency-phone-input">
             <label for="email">Phone Number: </label>
-            <input name="email" type="phone"/>
+            <input id="emergency-phone" name="emergency-phone" type="phone"/>
             <div class="error">Please provide your emergency contact's phone number.</div>
           </div>
         </div>
