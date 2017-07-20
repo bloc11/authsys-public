@@ -21,6 +21,13 @@ var connection = new autobahn.Connection({
    max_retry_delay: 3,
 });
 
+function update_data(r)
+{
+    var no = r;
+    var d = document.location.host;
+    window.location = "http://" + d + "/update?id=" + no;
+}
+
 function notify_broadcast(r)
 {
     var no = r[0];
@@ -38,6 +45,7 @@ $(document).ready(function () {
     connection.onopen = function(session, details)
     {
         session.subscribe('com.payments.notify_broadcast', notify_broadcast);
+        session.subscribe('com.members.update_data_broadcast', update_data);
     }
 
     connection.open();

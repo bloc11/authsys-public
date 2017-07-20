@@ -101,6 +101,12 @@ def finish():
     res_code = status['result']['code']
     return render_template('finish.html', output=str(status))
 
+@app.route('/update')
+def update():
+    user_id = request.args['id']
+    name = list(con.execute(select([members.c.name]).where(members.c.id==user_id)))[0][0]
+    return render_template('update.html', name=name, user_id=user_id)
+
 @app.route('/submit', methods=["POST"])
 def submit():
     con.execute(members.insert().values({
@@ -115,6 +121,15 @@ def submit():
         'timestamp': int(time.time()),
     }))
     thread.start_new_thread(send_email, (request.form['email'],))
+    return app.send_static_file('thankyou.html')
+
+@app.route('/submit_details', methods=["POST"])
+def submit_details():
+    con.execute(members.update().values({
+        'phone': request.form['phone'],
+        'emergency_phone': request.form['emergency-phone'],
+        'spam_consent': request.form.get('spam', 'off') == u'on',
+        }).where(members.c.id==int(request.form['user_id'])))
     return app.send_static_file('thankyou.html')
 
 @app.route('/')

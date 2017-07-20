@@ -1,0 +1,37 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/static/app.css"/>
+    <script src="/static/signature_pad.min.js"></script>
+    <script src="/static/autobahn.min.js"></script>
+    <script src="/static/jquery-3.1.1.min.js"></script>
+    <script src="/static/update.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<html>
+  <header class="main">
+    <div class="brand">
+      <i class="icon-logo"></i>
+    </div>
+  </header>
+  <body>
+    <div id="main">
+    <h1>Hi {{ name }}</h1>
+    Please update your details:
+    <form action="/submit_details" method="post">
+    <input type="hidden" name="user_id" value="{{ user_id }}" />
+    <div class="input" id="phone-input" name="phone-input">
+        <label for="phone">Phone: </label>
+        <input id="phone" name="phone" type="text"/>
+    </div>
+    <div class="input" id="phone-input" name="phone-input">
+        <label for="phone">Emergency Phone: </label>
+        <input id="phone" name="emergency-phone" type="text"/>
+    </div>
+    <div class="input" id="email-consent">
+        <label for="consent">Please send me occasional newsletter</label>
+        <input name="spam" type="checkbox"/>
+    </div>
+    <input id="submit-button" type="submit" value="Submit Changes"/>
+    </form>
+  </body>
+</html>
