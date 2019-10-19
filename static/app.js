@@ -86,8 +86,12 @@ $(document).ready(function () {
         ia.prop('checked', !ia.prop('checked'))
     });
 
-    $('#fullname').on('keydown', function(){
-      $('#fullname-input').removeClass('error');
+    $('#name').on('keydown', function(){
+      $('#name-input').removeClass('error');
+      $("#error").removeClass('show');
+    });
+    $('#surname').on('keydown', function(){
+      $('#surname-input').removeClass('error');
       $("#error").removeClass('show');
     });
     $('#phone').on('keydown', function(){
@@ -122,10 +126,14 @@ function save_signature()
       errors.push("Please agree to all sections");
     }
     if (!inputs[0].value) {
-        errors.push("<a href='#fullname-input'><i class='icon-up'></i> Please provide your full name.</a>");
-        $("#fullname-input").addClass('error');
+        errors.push("<a href='#name-input'><i class='icon-up'></i> Please provide your first name.</a>");
+        $("#name-input").addClass('error');
     }
     if (!inputs[1].value) {
+        errors.push("<a href='#surname-input'><i class='icon-up'></i> Please provide your surname.</a>");
+        $("#surname-input").addClass('error');
+    }
+    if (!inputs[2].value) {
         errors.push("<a href='#id-input'><i class='icon-up'></i> Please provide your South African ID number or passport number.</a>");
         $("#id-input").addClass('error');
     }

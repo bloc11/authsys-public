@@ -84,42 +84,20 @@
       <h2 class="top-space">Participant's details</h2>
       <form action="/submit" method="post">
         <div class="section">
-          <div class="input" id="fullname-input" name="fullname-input">
-            <label for="fullname">Full Name:</label>
-            <input id="fullname" name="fullname" type="text"/>
-            <div class="error">Please provide your full name.</div>
+          <div class="input" id="name-input" name="name-input">
+            <label for="name">First Name(s):</label>
+            <input id="name" name="name" type="text"/>
+            <div class="error">Please provide your first name.</div>
+          </div>
+          <div class="input" id="surname-input" name="surname-input">
+            <label for="surname">Surname:</label>
+            <input id="surname" name="surname" type="text"/>
+            <div class="error">Please provide your surname.</div>
           </div>
           <div class="input" id="id-input" name="id-input">
             <label for="id_no">ID/Passport Number:</label>
             <input id="id_no" name="id_no"/>
             <div class="error">Please provide your South African ID number or passport number (or date of birth in case you don't know).</div>
-          </div>
-        </div>
-
-        <h3>Electronic Signature Consent</h3>
-        <p>
-          By checking here, you are consenting to the use of your electronic signature in lieu
-          of an original signature on paper. You have the right to request that you sign a paper
-          copy instead. By checking here, you are waiving that right. After consent, you may,
-          upon written request to us, obtain a paper copy of an electronic record.
-          No fee will be charged for such copy and no special hardware or software is required
-          to view it. Your agreement to use an electronic signature with us for any documents
-          will continue until such time as you notify us in writing that you no longer wish to
-          use an electronic signature. There is no penalty for withdrawing your consent. You
-          should always make sure that we have a current email address in order to contact you
-          regarding any changes, if necessary.
-        </p>
-
-        <h3 class="top-space-small">Electronic Signature</h3>
-
-        <div id="signature-pad" class="m-signature-pad">
-          <div class="m-signature-pad--body">
-          <canvas></canvas>
-        </div>
-
-        <div class="m-signature-pad--footer" id="signature-input" name="signature-input">
-          <div class="description">Sign above</div>
-            <button type="button" class="button clear" data-action="clear">Clear</button>
           </div>
         </div>
 
@@ -171,10 +149,39 @@
           </div>
         </div>
 
+        <h3>Electronic Signature Consent</h3>
+        <p>
+          By checking here, you are consenting to the use of your electronic signature in lieu
+          of an original signature on paper. You have the right to request that you sign a paper
+          copy instead. By checking here, you are waiving that right. After consent, you may,
+          upon written request to us, obtain a paper copy of an electronic record.
+          No fee will be charged for such copy and no special hardware or software is required
+          to view it. Your agreement to use an electronic signature with us for any documents
+          will continue until such time as you notify us in writing that you no longer wish to
+          use an electronic signature. There is no penalty for withdrawing your consent. You
+          should always make sure that we have a current email address in order to contact you
+          regarding any changes, if necessary.
+        </p>
+
+        <h3 class="top-space-small">Electronic Signature</h3>
+
+        <div id="signature-pad" class="m-signature-pad">
+          <div class="m-signature-pad--body">
+          <canvas></canvas>
+        </div>
+
+        <div class="m-signature-pad--footer" id="signature-input" name="signature-input">
+          <div class="description">Sign above</div>
+            <button type="button" class="button clear" data-action="clear">Clear</button>
+          </div>
+        </div>
+
         <input type="hidden" id="input-filename" name="filename"/>
 
         <span id="progress"></span>
         <div id="error"></div>
+
+        <h3 class="top-space-small"></h3>
 
         <input id="submit-button" onclick="return save_signature();" type="submit" value="Submit Waiver"/>
       </form>

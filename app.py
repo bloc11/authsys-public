@@ -110,7 +110,7 @@ def update():
 @app.route('/submit', methods=["POST"])
 def submit():
     con.execute(members.insert().values({
-        'name': request.form['fullname'],
+        'name': request.form['name'] + " " + request.form['surname'],
         'email': request.form['email'],
         'phone': request.form['phone'],
         'emergency_phone': request.form['emergency-phone'],
